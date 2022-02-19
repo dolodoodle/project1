@@ -8,16 +8,13 @@ body {
 }
 
 #heart {
-  position: absolute;
+  position: relative;
   width: 90px;
   height: 80px;
-  animation: mymove 4s ;
-  margin-left: 80%;
-  
-  
-  
- 
+  animation: mymove 4s, heartbeat 2s ;
+  margin-left:-90px;
 }
+
 
 #heart::before, #heart::after {
   content: "";
@@ -42,6 +39,8 @@ body {
 }
 
 
+
+
 @keyframes heartbeat {
   0% {
     transform: scale( 1 );    
@@ -49,26 +48,21 @@ body {
   20% {
     transform: scale( .75 ) 
       translateX(5%) 
-      translateY(5%);
   } 
   40% {
     transform: scale( 1 ) 
       translateX(9%) 
-      translateY(10%);
   }
 }
 
-#heart {
-  animation: heartbeat 2s;
-}
 
-.heart {
-  padding: 1rem;
-  
-}
+
 
 
 header {
+  display: flex;
+  padding-top: 1rem;
+  align: center;
   animation-duration: 2s;
   animation-name: slideup;
 }
@@ -86,10 +80,7 @@ header {
   }
 }
 
-header {
-  padding-top: 1rem;
-  align: center;
-}
+
 
 
 
@@ -163,27 +154,26 @@ p {
 .projects {
   color: #754b61;
   background-color: #ecf8f7;
-  height: 350px;
-  width: flex;
   padding: 1rem;
 font-family: 'Quicksand', sans-serif;
 }
 
 
 .projects ol {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-content: align; /* only use for wrapped rows. Otherwise use align-items */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  align-items: center;
 
 }
 
 
-
 .projects li {
-      width: 180px;
-      height: 180px;
+      //width: 180px;
+      //height: 180px;
+      width: 80%;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -193,11 +183,12 @@ font-family: 'Quicksand', sans-serif;
       padding: 20px;
       border-radius: .25rem;
       transition: opacity 0.35s ease;
- }
+      
+}
 
- .projects li: active {
+.projects li:active {
    background: white;
-  }
+}
 
    
 
@@ -206,47 +197,43 @@ font-family: 'Quicksand', sans-serif;
 
 
 
-    .labs {
+.labs {
       color: #754b61;
       background-color: #b58ebc;
-      float: left;
-      width: 70%;
       font-family: 'Quicksand', sans-serif;
     }
 
-    .labs li {
-      width: 180px;
-      height: 180px;
-      display: flex;
-      flex-direction: column;
-      justify-content: 1rem;
-      border: 2px solid #f2d7e8;
-      background: #fae7eb;
-      box-shadow:3px 5px 3px hsla(0, 50%, 0%, .25);
-      padding: 20px;
-      border-radius: .25rem;
+
+.labs li {
+  //width: 180px;
+ //width: 80%;
+  gap: 1rem;
+  //height: 180px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #f2d7e8;
+  background: #fae7eb;
+  box-shadow:3px 5px 3px hsla(0, 50%, 0%, .25);
+  padding: 20px;
+  border-radius: .25rem;
       
-    }
+}
 
-    .labs ol {
-      display: flex;
-      flex-template-columns: repeat(4, 1fr);
-      grid-column-gap: 1rem;
-      grid-row-gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: start;
-      align-content: align; /* only use for wrapped rows. Otherwise use align-items */
-  }
+.labs ol {
+  display: grid;
+  padding: 1rem;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit,minmax(12rem,1fr));
+}
 
-  aside {
-    background-color: #f2d7e8;
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 8px;
-    padding-left: 2rem;
-    padding-right: 2rem;
+aside {
+  background-color: #f2d7e8;
+  padding-bottom: 8px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
     
-  }
+}
 
   
 
@@ -305,42 +292,45 @@ font-family: 'Quicksand', sans-serif;
     */ 
 
 
+
 @media screen and (min-width: 600px) {
 
 body {
-  display grid;
-
-  main {
-    display: grid;
-    grid-template-columns: 1fr ;
- }
-
- .projects ol {
-  width: 100%;
-  display:block;
   margin-left: auto;
   margin-right: auto;
- }
 
- .projects li {
-  max-width: 100%;
-  display:block;
-  margin-left: auto;
-  margin-right: auto;
- }
+}
+
+header, .about, .projects {
+  grid-column:1 /span 2;
+}
+
+main {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.projects ol {
+  flex-direction: row;
+  flex-basis: 5rem;
+  justify-content: space-evenly;
+}
+.projects li, .labs li{
+  //width:18rem;
+  height:18rem;
+
+}
+
+footer {
+
+}
 
 
-aside {
-    display: bottom;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-  .labs li{
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+}
+
+
+
 
 
 
