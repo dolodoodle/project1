@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 
+
 /*style rule*/ 
 body {
   background-color: #fae7eb;
@@ -12,7 +13,7 @@ body {
   width: 90px;
   height: 80px;
   animation: mymove 4s, heartbeat 2s ;
-  margin-left:-90px;
+  margin:auto;
 }
 
 
@@ -60,9 +61,8 @@ body {
 
 
 header {
-  display: flex;
   padding-top: 1rem;
-  align: center;
+  text-align: center;
   animation-duration: 2s;
   animation-name: slideup;
 }
@@ -154,8 +154,7 @@ p {
 .projects {
   color: #754b61;
   background-color: #ecf8f7;
-  padding: 1rem;
-font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 
@@ -321,13 +320,8 @@ main {
 
 }
 
-footer {
-
 }
 
-
-
-}
 
 
 
